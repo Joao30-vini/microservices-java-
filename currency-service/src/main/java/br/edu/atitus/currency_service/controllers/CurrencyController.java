@@ -25,9 +25,11 @@ public class CurrencyController {
 			this.currencyBCClient = currencyBCClient; 
 			}
 	
+	
 	@Value("${server.port}")
 	private int serverPort;
 
+	
 	@GetMapping("/{value}/{source}/{target}")
 	public ResponseEntity<CurrencyEntity> getCurrency(
 			@PathVariable double value,
@@ -41,6 +43,7 @@ public class CurrencyController {
 		source = source.toUpperCase();
 		target = target.toUpperCase();
 		String dataSource = "None";
+		
 		
 		CurrencyEntity currency = new CurrencyEntity();
 		currency.setSource(source);
